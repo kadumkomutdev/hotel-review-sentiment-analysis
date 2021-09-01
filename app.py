@@ -19,7 +19,7 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['POST','GET'])
 def predict():
     if request.method == 'POST':
         message = request.form['message'].lower()
