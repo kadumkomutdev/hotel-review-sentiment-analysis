@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Review Sentiment Analysis</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+	<link rel="stylesheet" href="../static/w3.css">
+</head>
+<body>
+
+	<div class="w3-center w3-padding-16 w3-red w3-xxlarge">
+		Hotel Review Sentiment Analysis
+	</div>
+
+	<div class="results w3-center w3-bold w3-panel">
+
+	<h3 class=" w3-padding-16 w3-blue">"{{message}}"</h3>
+
+	{% if my_nb_prediction == 1%}
+		<div class="w3-green padding-large w3-border w3-round-large"> 
+			<h2>Naive Bayes classifier</h2>
+			<h2><b>POSITIVE REVIEW <br> with a predicted probability of {{('%.2f'%(nb_percentage*100))}}%</b></h2>
+		</div>
+		{% elif my_nb_prediction == 0%}
+		<div class="w3-red padding-large w3-border w3-round-large"> 
+			<h2>Naive Bayes classifier</h2>
+			<h2><b>NEGATIVE REVIEW <br>with a predicted probability of {{('%.2f'%(nb_percentage*100))}}%</b></h2>
+		</div>
+	{% endif %}
+
+	{% if my_lg_prediction == 1%}
+		<div class="w3-green padding-large w3-round-large"> 
+			<h2>Logistic Regression classifier</h2>
+			<h2><b>POSITIVE REVIEW <br> with a predicted Probability of {{('%.2f'%(lg_percentage*100))}}%</b></h2>
+		</div>
+
+		{% elif my_lg_prediction == 0%}
+		<div class="w3-red padding-large w3-round-large"> 
+			<h2>Logistic Regression classifier</h2>
+			<h2><b>NEGATIVE REVIEW <br>with a predicted Probability of {{('%.2f'%(lg_percentage*100))}}%</b></h2>
+		</div>
+	{% endif %}
+
+	</div>
+
+</body>
+</html>

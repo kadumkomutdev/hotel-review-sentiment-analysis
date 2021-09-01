@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Review Sentiment Analysis</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" href="../static/w3.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<div class="w3-center w3-padding-16 w3-red w3-text-white w3-xxlarge">
+		Hotel Review Sentiment Analysis
+	</div>
+
+	<div class="ml-container container w3-center w3-margin-top">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<textarea name="message" style="outline: none;" placeholder="Enter your review here" rows="6" cols="50" required></textarea>
+		<br/>
+
+		<input type="submit" class="btn-info w3-button w3-red w3-xlarge w3-round-large w3-hover-brown" value="Predict">
+		
+	</form>
+		
+	</div>
+
+	
+	
+
+</body>
+</html>
